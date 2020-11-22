@@ -1,0 +1,45 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.login-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 100px;
+    border: coral;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 15px;
+    padding: 50px;
+}
+
+.logo {
+    display: block;
+    max-width:330px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+}
+
+.login-title {
+    color: rgb(20, 23, 26);
+    font-size: 30px;
+    overflow-wrap: break-word;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.signup {
+    margin-top: 10px;
+    overflow-wrap: break-word;
+    line-height: 1.3125;
+    cursor: pointer;
+    color: coral;
+
+}
+
