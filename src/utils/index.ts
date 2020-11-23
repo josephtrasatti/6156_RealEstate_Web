@@ -1,4 +1,4 @@
 export * from './Objects'
 export * from './Storage'
-export * from './Client'
+export * from './UserAPI'
 export * from './Hasher'
