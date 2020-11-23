@@ -19,7 +19,7 @@ export const GoogleButton = (props:any) => {
 
     return (
         <GoogleLogin
-            clientId="75778883083-lkfu282t0fgsg844v6rbkkdlcum3rf96.apps.googleusercontent.com"
+            clientId="76770001645-gpp2vkat48bk8o42b1d782kq96m3q0q2.apps.googleusercontent.com"
             render={renderProps => (
                 <button className={props.css} onClick={renderProps.onClick} disabled={renderProps.disabled}>{props.btnText}</button>
             )}
