@@ -1,6 +1,28 @@
 .gbuttonLogin {
     display: flex;
     color: white;
+    background-color: lightblue;
+    font-size: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 9999px;
+    border-style: solid;
+    border-color: transparent;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    min-width: calc(78.89px);
+    min-height: 49px;
+    transition-property: background-color, box-shadow;
+}
+
+.createAccount {
+    display: flex;
+    color: white;
     background-color: coral;
     font-size: 20px;
     padding-left: 60px;

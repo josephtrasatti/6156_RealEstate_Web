@@ -8,20 +8,20 @@ class UserClient {
 	}
 
 	public static signUp = (
-		id: string,
+		password: string,
 		firstName: string,
 		lastName: string,
 		email: string,
-        sex: string,
-		profilePicture?: string,
+		position: string,
+		landLordId: string
 	): Promise<{ token: string }> => {
-		return client('/user/signUp', {
-			id,
+		return client('/Registrations', {
+			password,
 			firstName,
 			lastName,
 			email,
-			sex,
-			profilePicture,
+			position,
+			landLordId
 		})
 	}
 
@@ -62,8 +62,8 @@ export class Client {
 	public static User = UserClient
 }
 
-// const API_URL = 'https://moove-api.herokuapp.com'
-const API_URL = 'http://localhost:8000'
+const API_URL = 'http://ec2-35-170-65-222.compute-1.amazonaws.com:8000'
+//const API_URL = 'http://localhost:8000'
 
 /**
  * Creates a URI from the endpoint and API URL.
@@ -100,11 +100,11 @@ const parseResponse = async (res: Response) => {
 }
 
 /**
- * Calls a moove-api endpoint and returns the result as JSON or text (or null), depending on what it is.
+ * Calls a RealEstate endpoint and returns the result as JSON or text (or null), depending on what it is.
  * @param endpoint The endpoint to call, starting with a /.
  * @param body The body of the request, usually an object.
  * @returns Asynchronously returns a response.
- * @throws An error coming from upmed-api.
+ * @throws An error coming from RealEstate.
  */
 export const client = async (endpoint: string, body: any): Promise<any> => {
 	if (endpoint.indexOf('/') !== 0) {
@@ -121,6 +121,6 @@ export const client = async (endpoint: string, body: any): Promise<any> => {
 		})
 		return parseResponse(res)
 	} catch (e) {
-		throw new Error(`moove-api Error: ${e.toString()}`)
+		throw new Error(`RealEstate Error: ${e.toString()}`)
 	}
 }
