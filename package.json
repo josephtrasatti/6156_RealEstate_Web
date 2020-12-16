@@ -23,7 +23,9 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
-    "typescript": "^4.0.5"
+    "typescript": "^4.0.5",
+    "uri-js": "^4.4.0",
+    "urijs": "^1.19.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,83 @@
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  padding: 1rem;
+  margin: auto;
+  max-width: 400px;
+
+}
+.inputList {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    align-self: center;
+    padding: 1rem;
+    margin: auto;
+    max-width: 400px;
+    
+}
+.accountButton {
+    display: inline;
+    color: white;
+    background-color: coral;
+    font: Arial;
+    font-size: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 9999px;
+    border-style: solid;
+    border-color: transparent;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.genderItem {
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+ 
+}
+.genderText {
+  margin: 0%;
+}
+.genderSelect {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 165px;
+  height: 22px;
+  margin: 2px;
+}
+.genderBtn {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font: Arial;
+  font-size: 14px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-style: solid;
+  border-color: black;
+  border-width: .5px;
+  cursor: pointer;
+}
+.unselected {
+  color: black;
+  background-color: white;
+}
+.selected {
+  color: white;
+  background-color: coral;
+}
+@media screen and (min-width: 1px) {
+  Button {
+    display: inline;
+  }
+}
