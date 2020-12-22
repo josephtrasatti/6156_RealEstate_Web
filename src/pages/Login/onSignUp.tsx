@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router';
 import './OnSignUp.css';
 import { Hasher } from '../../utils/Hasher'
 import URI from 'urijs'
-import { Client, Storage, Objects } from '../../utils';
+import { Client, Objects, Users } from '../../utils';
 import { TextInput } from '../../components/forms'
 
 export const OnSignUp = () => {
@@ -47,9 +47,11 @@ export const OnSignUp = () => {
                 
                 Client.User.logIn(decodedDetails.id, decodedDetails.email).then(({ token }) => {
                     if (token) {
+                        console.log('token', token)
                         setUserToken(token)
                     }
                     else {
+                        console.log('token1', token)
                         setLoading(false)
                     }
                 }).catch((e) => {
@@ -63,7 +65,7 @@ export const OnSignUp = () => {
 
     useEffect(() => {
         if (!Objects.isNullish(userToken)) {
-            //Users.setUserToken(userToken!)
+            Users.setUserToken(userToken!)
             history.push('/profile')
         }
     }, [userToken, history])

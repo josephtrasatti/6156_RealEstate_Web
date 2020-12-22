@@ -6,6 +6,7 @@ import { Navbar } from './pages/Navbar';
 
 import { Login } from './pages/Login';
 import { OnSignUp } from './pages/Login';
+import { Profile } from './pages/profile'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/" component={Home} exact />
                 <Route path="/login" component={Login} />
                 <Route path="/onsignup" component={OnSignUp} />
+                <Route path="/Profile" component={Profile} />
             </Switch>
         </BrowserRouter>
     </main>
