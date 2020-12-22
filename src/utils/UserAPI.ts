@@ -55,6 +55,25 @@ class UserClient {
 	public static getAll = (token: string): Promise<User[]> => {
 		return client('/user/getAll', { token })
 	}
+
+	public static getSuggestions = (streetName: string): Promise<string[]> => {
+		return client('/address-suggest', { streetName })
+	}
+
+	public static checkAddress = (
+		street: string,
+		city: string,
+		state: string,
+		zipcode: string
+	): Promise<boolean> => {
+		return client('/address-rsp', { 
+			street,
+			city,
+			state,
+			zipcode 
+		})
+	}
+	
 }
 
 

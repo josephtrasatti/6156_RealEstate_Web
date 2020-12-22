@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 
 import { Objects } from '../../utils'
 
@@ -93,6 +93,12 @@ export class TextInput extends Component<TextInputProps> {
 			required,
 			rows,
 		} = this.props
+
+		// useEffect(() => {
+		// 	if ((this.props as any).value !== this.state.value) {
+		// 	  this.setValue((this.props as any).value);
+		// 	}
+		//   }, [this.props.value]);
 
 		const { isValid } = this.state
 
