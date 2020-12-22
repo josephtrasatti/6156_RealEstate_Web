@@ -46,8 +46,9 @@ export const Login = () => {
                     label="Password: "
                     onChange={(t) => setPassword(t)}
                 />
-                <button className="createAccount" onClick={register}>Create an Account</button>
-                <GoogleButton text='Sign up through Google' className="gbuttonLogin" onSuccess={onSuccessSignUp}/>
+
+                <button className="createAccount" onClick={register}>Login / Create an Account</button>
+                <GoogleButton text='Login / Sign up through Google' className="gbuttonLogin" onSuccess={onSuccessSignUp}/>
             </div>
         </div>
         

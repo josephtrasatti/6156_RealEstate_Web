@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router';
 import './OnSignUp.css';
 import { Hasher } from '../../utils/Hasher'
 import URI from 'urijs'
-import { Client, Storage, Objects } from '../../utils';
+import { Client, Objects, Users } from '../../utils';
 import { TextInput } from '../../components/forms'
 
 export const OnSignUp = () => {
@@ -63,7 +63,7 @@ export const OnSignUp = () => {
 
     useEffect(() => {
         if (!Objects.isNullish(userToken)) {
-            //Users.setUserToken(userToken!)
+            Users.setUserToken(userToken!)
             history.push('/profile')
         }
     }, [userToken, history])
