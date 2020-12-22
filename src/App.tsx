@@ -8,6 +8,7 @@ import { Login } from './pages/Login';
 import { OnSignUp } from './pages/Login';
 import { Profile } from './pages/profile'
 
+
 function App() {
   return (
     <main>
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/login" component={Login} />
                 <Route path="/onsignup" component={OnSignUp} />
                 <Route path="/Profile" component={Profile} />
+
             </Switch>
         </BrowserRouter>
     </main>

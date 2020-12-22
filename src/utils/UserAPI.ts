@@ -62,8 +62,10 @@ export class Client {
 	public static User = UserClient
 }
 
-//const API_URL = 'http://ec2-35-170-65-222.compute-1.amazonaws.com:8000'
-const API_URL = 'http://localhost:8000'
+
+const API_URL = 'http://ec2-35-170-65-222.compute-1.amazonaws.com:8000'
+//const API_URL = 'http://localhost:8000'
+
 
 /**
  * Creates a URI from the endpoint and API URL.

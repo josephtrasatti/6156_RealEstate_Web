@@ -47,11 +47,12 @@ export const OnSignUp = () => {
                 
                 Client.User.logIn(decodedDetails.id, decodedDetails.email).then(({ token }) => {
                     if (token) {
-                        console.log('token', token)
                         setUserToken(token)
                     }
                     else {
-                        console.log('token1', token)
+                        setUserToken(token)
+                    }
+                    else {
                         setLoading(false)
                     }
                 }).catch((e) => {
