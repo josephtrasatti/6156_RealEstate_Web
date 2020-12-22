@@ -3,8 +3,8 @@ import { User } from '../models'
 
 
 class UserClient {
-	public static logIn = (id: string, email: string): Promise<{ token: string }> => {
-		return client('/user/login', { id, email })
+	public static logIn = (password: string, email: string): Promise<{ token: string }> => {
+		return client('/Login', { password, email })
 	}
 
 	public static signUp = (
@@ -30,7 +30,7 @@ class UserClient {
 	}
 
 	public static getByToken = (token: string): Promise<User> => {
-		return client('/user/getByToken', { token })
+		return client('/User/getByToken', { token })
 	}
 
 	public static editProfile = (
@@ -62,8 +62,10 @@ export class Client {
 	public static User = UserClient
 }
 
+
 const API_URL = 'http://ec2-35-170-65-222.compute-1.amazonaws.com:8000'
 //const API_URL = 'http://localhost:8000'
+
 
 /**
  * Creates a URI from the endpoint and API URL.
