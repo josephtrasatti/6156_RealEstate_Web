@@ -124,7 +124,6 @@ export const Profile = () => {
 					}>Logout</button>
 				</div>
                 <div>
-                    {userInfo && !userInfo.addressId &&
                     <div>
                         Street Name*
                         <input
@@ -132,7 +131,6 @@ export const Profile = () => {
                             onChange={(t) => setStreetName(t.target.value)}
                         />
                     </div>
-                    }
                     {suggestions && suggestions.map(suggestion => {
                         return (
                             <button onClick={() => fillInfo(suggestion)}>{suggestion.street_line}{suggestion.city}{suggestion.state}</button>
