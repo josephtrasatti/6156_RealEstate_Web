@@ -95,6 +95,7 @@ export class Client {
 	public static User = UserClient
 }
 
+
 const API_URL = 'https://d2rbw25t7b.execute-api.us-east-1.amazonaws.com/dev/api/customers'
 //const API_URL = 'http://localhost:8000'
 
