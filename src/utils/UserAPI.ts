@@ -4,7 +4,7 @@ import { User } from '../models'
 
 class UserClient {
 	public static logIn = (password: string, email: string): Promise<{ token: string }> => {
-		return client('/Login', { password, email })
+		return client('/login', { password, email })
 	}
 
 	public static signUp = (
@@ -15,7 +15,7 @@ class UserClient {
 		position: string,
 		landLordId: string
 	): Promise<{ token: string }> => {
-		return client('/Registrations', {
+		return client('/registrations', {
 			password,
 			firstName,
 			lastName,
@@ -95,7 +95,7 @@ export class Client {
 	public static User = UserClient
 }
 
-const API_URL = 'https://ec2-35-170-65-222.compute-1.amazonaws.com:8000'
+const API_URL = 'https://d2rbw25t7b.execute-api.us-east-1.amazonaws.com/dev/api/customers'
 //const API_URL = 'http://localhost:8000'
 
 /**
