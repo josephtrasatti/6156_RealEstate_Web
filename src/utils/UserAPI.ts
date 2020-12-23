@@ -30,7 +30,7 @@ class UserClient {
 	}
 
 	public static getByToken = (token: string): Promise<User> => {
-		return client('/user/getbytoken', { token })
+		return client('/users/getbytokens', { token })
 	}
 
 	public static editProfile = (
