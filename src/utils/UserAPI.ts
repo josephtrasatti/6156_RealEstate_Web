@@ -30,7 +30,7 @@ class UserClient {
 	}
 
 	public static getByToken = (token: string): Promise<User> => {
-		return client('/User/getByToken', { token })
+		return client('/users/getbytoken', { token })
 	}
 
 	public static editProfile = (
@@ -80,7 +80,7 @@ class UserClient {
 		state: string,
 		zipcode: string
 	): Promise<boolean> => {
-		return client('/Address', { 
+		return client('/addresses', { 
 			streetName,
 			city,
 			state,
