@@ -65,9 +65,23 @@ class UserClient {
 		city: string,
 		state: string,
 		zipcode: string
-	): Promise<boolean> => {
+	): Promise<string> => {
 		return client('/address-rsp', { 
 			street,
+			city,
+			state,
+			zipcode 
+		})
+	}
+
+	public static addAddress = (
+		streetName: string,
+		city: string,
+		state: string,
+		zipcode: string
+	): Promise<boolean> => {
+		return client('/Address', { 
+			streetName,
 			city,
 			state,
 			zipcode 

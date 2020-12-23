@@ -37,6 +37,9 @@ export const Profile = () => {
     const [zipcode, setZipcode] = useState('')
     const [suggestions, setSuggestions] = useState([] as Suggestion[])
 
+    const [wrongAddress, setWrongAddress] = useState(false)
+    const [addressCreated, setAddressCreated] = useState(false)
+
 	useEffect(() => {
 		setLoading(true)
 		if (!didSetUserInfo) {
@@ -75,8 +78,22 @@ export const Profile = () => {
         setZipcode(suggestion.zipcode)
     }
 
+    const addAddress = async () => {
+        return await Client.User.addAddress(streetName, city, state, zipcode)
+    }
+
     const checkAddress = async () => {
-        await Client.User.checkAddress(streetName, city, state, zipcode).then(res => console.log(res))
+        await Client.User.checkAddress(streetName, city, state, zipcode).then((res) => {
+            if (res === 'true') {
+                setWrongAddress(false)
+                addAddress().then(() => {
+                    setAddressCreated(true)
+                })
+            }
+            else {
+                setWrongAddress(true)
+            }
+        })     
     }
 
 	return showError ? (
@@ -116,7 +133,7 @@ export const Profile = () => {
                         />
                     </div>
                     }
-                    {suggestions.map(suggestion => {
+                    {suggestions && suggestions.map(suggestion => {
                         return (
                             <button onClick={() => fillInfo(suggestion)}>{suggestion.street_line}{suggestion.city}{suggestion.state}</button>
                         )
@@ -145,7 +162,23 @@ export const Profile = () => {
                             required
                         />
                     </div>
-                    <button onClick={() => checkAddress()}>Enter Address</button>
+                    {addressCreated ? 
+                        <button disabled={true} onClick={() => checkAddress()}>Enter Address</button> :
+                        <button onClick={() => checkAddress()}>Enter Address</button> 
+                    }
+                    
+                </div>
+                <div>
+                    {wrongAddress &&
+                    <div>
+                        Entered address wrong, enter a real address please.
+                    </div>
+                    }
+                    {addressCreated &&
+                    <div>
+                        Created Address!
+                    </div>
+                    }
                 </div>
 			</div>
 		</div>
